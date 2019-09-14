@@ -1,10 +1,8 @@
-# Bluelog
+# openstack.top
 
 *A blue blog.*
 
-Demo: http://bluelog.helloflask.com
-
-![Screenshot](http://helloflask.com/screenshots/bluelog.png)
+Demo: http://openstack.top
 
 ## Installation
 
