@@ -14,6 +14,8 @@ from wtforms.validators import DataRequired, Email, Length, Optional, URL
 from bluelog.models import Category
 
 
+# DataRequired() 校验必填
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(1, 20)])
     password = PasswordField('Password', validators=[DataRequired(), Length(1, 128)])

@@ -21,7 +21,10 @@ else:
 class BaseConfig(object):
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev key')
 
+    # Flask-DebugToolbar 调试
     DEBUG_TB_INTERCEPT_REDIRECTS = False
+    # Flask-DebugToolbar 关闭，默认为开启
+    DEBUG_TB_ENABLED = False
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True

@@ -60,7 +60,8 @@ def show_post(post_id):
     else:
         form = CommentForm()
         from_admin = False
-        reviewed = False
+        # 游客评论默认不审核
+        reviewed = True
 
     if form.validate_on_submit():
         author = form.author.data
@@ -80,7 +81,7 @@ def show_post(post_id):
         if current_user.is_authenticated:  # send message based on authentication status
             flash('Comment published.', 'success')
         else:
-            flash('Thanks, your comment will be published after reviewed.', 'info')
+            flash('Thanks, your comment will be reviewed after published.', 'info')
             send_new_comment_email(post)  # send notification email to admin
         return redirect(url_for('.show_post', post_id=post_id))
     return render_template('blog/post.html', post=post, pagination=pagination, form=form, comments=comments)
